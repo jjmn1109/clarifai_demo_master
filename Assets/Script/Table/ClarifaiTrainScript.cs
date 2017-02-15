@@ -1,16 +1,16 @@
-﻿using Clarifai;
+﻿using ClarifaiLibrary;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ClarifaiTrainScript : MonoBehaviour {
 
-    ClarifaiLibrary _clarifai;
+    Clarifai _clarifai;
     Text _conceptName;
 
 	// Use this for initialization
 	void Start () {
         _conceptName = transform.FindChild("ContentName").GetComponent<Text>();
-        _clarifai = GameObject.Find("Clarifai").GetComponent<ClarifaiLibrary>().Clarifai;
+        _clarifai = GameObject.Find("Clarifai").GetComponent<Clarifai>().Instance;
 	}
 
     /// <summary>

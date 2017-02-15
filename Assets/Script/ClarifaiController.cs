@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using Clarifai;
+using ClarifaiLibrary;
 using System.Collections;
 
 public class ClarifaiController : MonoBehaviour
@@ -15,14 +15,14 @@ public class ClarifaiController : MonoBehaviour
 
     ArrayList ContentsV1;
     ArrayList ContentsV2;
-    ClarifaiLibrary _clarifai;
+    Clarifai _clarifai;
 
     /// <summary>
     /// 
     /// </summary>
     void Start ()
     {
-        _clarifai = GameObject.Find("Clarifai").GetComponent<ClarifaiLibrary>().Clarifai;
+        _clarifai = GameObject.Find("Clarifai").GetComponent<Clarifai>().Instance;
         
         if (null != _clarifai)
         {
@@ -30,7 +30,7 @@ public class ClarifaiController : MonoBehaviour
             _clarifai.OnPredictCustomWithTextureSuccess     += _clarifai_OnPredictCustomWithTextureSuccess;
             _clarifai.OnPredictGeneralWithTextureSuccess    += _clarifai_OnPredictGeneralWithTextureSuccess;
             _clarifai.OnTrainModelSuccess                   += _clarifai_OnTrainModelSuccess;
-            _clarifai.OnError                               += _clarifai_OnError;
+            _clarifai.OnReceivedError                       += _clarifai_OnReceivedError;
         }
 
         ContentsV1 = new ArrayList();
@@ -196,7 +196,7 @@ public class ClarifaiController : MonoBehaviour
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void _clarifai_OnError(object sender, PublisherEventArgs e)
+    private void _clarifai_OnReceivedError(object sender, PublisherEventArgs e)
     {
         //To show the original string message from Clarifai
         Debug.Log(e.orgMsg);

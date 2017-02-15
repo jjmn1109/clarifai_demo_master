@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1F5A5B87-CBC9-D4D6-066A-A875A2AE6D94}</ProjectGuid>
+    <ProjectGuid>{AB174B9F-E5CC-6908-F0CC-9964ADA8DB6D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -80,7 +80,10 @@
       <HintPath>Assets\Plugins\Clarifai.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>Assets\Resources\Newtonsoft.Json.dll</HintPath>
+      <HintPath>Assets\Plugins\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebService">
+      <HintPath>Assets\Plugins\WebService.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
